@@ -14,7 +14,7 @@
   git:
     repo: 'https://github.com/robbyrussell/oh-my-zsh.git'
     version: master
-    dest: '~/.oh-my-zsh'
+    dest: '/home/brent/.oh-my-zsh'
   with_items: '{{ users }}'
   when: users is defined
 
@@ -24,7 +24,7 @@
   git:
     repo: 'https://github.com/romkatv/powerlevel10k.git'
     version: master
-    dest: '~/.oh-my-zsh/custom/themes/powerlevel10k'
+    dest: '/home/brent/.oh-my-zsh/custom/themes/powerlevel10k'
   with_items: '{{ users }}'
   when: users is defined
 
@@ -34,7 +34,7 @@
   git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     version: master
-    dest: '~/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
+    dest: '/home/brent/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
   with_items: '{{ users }}'
   when: users is defined
 
@@ -44,7 +44,7 @@
   git:
     repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
     version: master
-    dest: '~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting'
+    dest: '/home/brent/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting'
   with_items: '{{ users }}'
   when: users is defined
 
@@ -52,7 +52,7 @@
   become: yes
   template:
     src: "{{ zshrc_src_template }}"
-    dest: '~/.zshrc'
+    dest: '/home/brent/.zshrc'
     backup: yes
     mode: 'u=rw,go=r'
     group: '{{ item.username }}'
@@ -64,7 +64,7 @@
   become: yes
   copy:
     src: "{{ p10k_src_file }}"
-    dest: ~/.p10k.zsh
+    dest: '/home/brent/.p10k.zsh'
     backup: yes
     mode: 'u=rw,go=r'
     group: '{{ item.username }}'

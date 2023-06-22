@@ -1,13 +1,6 @@
-# Ansible Role: oh_my_zsh_p10k
-
-[![Build Status](https://travis-ci.org/tomereli/ansible-role-oh-my-zsh-p10k.svg?branch=master)](https://travis-ci.org/tomereli/ansible-role-oh-my-zsh-p10k)
-[![Ansible Galaxy](http://img.shields.io/badge/galaxy-tomereli.oh_my_zsh_p10k-660198.svg)](https://galaxy.ansible.com/tomereli/oh_my_zsh_p10k)
+# Ansible Role: brentgl.oh-my-zsh
 
 An Ansible role that installs and configures [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) with [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme for specified users. You can provide your own `.zshrc` and `.p10k.zsh` files or use the provided ones.
-
-## Requirements
-
-Internet access - if running behind proxy, consider using `tomereli.proxy` role before this one.
 
 ## Role Variables
 
@@ -69,10 +62,3 @@ You can also provide your own version of the `.p10k.zsh` by setting the `p10k_sr
 > - Do not use `.p10k.zsh` as your custom filename as it will just pick the default template instead.
 > - Contrarily to the `.zshrc.j2` template, the custom `.p10k.zsh` will be copied **without** further modification, i.e. Jinja2 syntax is **not** supported in this file.
 
-## License
-
-MIT / BSD
-
-## Author Information
-
-This role was created in 2020 by [Tomer Arbel-Eliyahu](https://github.com/tomereli)
